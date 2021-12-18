@@ -24,7 +24,9 @@ public class OrderService {
     public Optional<Order> getOrder(int id) {
         return orderRepository.getOrder(id);
     }
-
+    
+     
+    
     public Order save(Order order) {
         if (order.getId() == null) {
             return order;
@@ -53,8 +55,8 @@ public class OrderService {
                     dbOrder.get().setSalesMan(order.getSalesMan());
                 }
 
-                if (order.getLaptop() != null){
-                    dbOrder.get().setLaptop(order.getLaptop());
+                if (order.getProducts()!= null){
+                    dbOrder.get().setProducts (order.getProducts());
                 }
 
                 if (order.getQuantities() != null){
